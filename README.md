@@ -48,3 +48,4 @@ pSTY_X_directional.py - Comparison of STY and decoy amino acid distribution. STY
 # Example files
 
 Example files are contained within */Example_Search_files* and are called within the params files for each of the example searches
+https://www.dropbox.com/sh/iyvra02fphecx1j/AABA56MNAfSA2kQYkdNHfOOta?dl=0
