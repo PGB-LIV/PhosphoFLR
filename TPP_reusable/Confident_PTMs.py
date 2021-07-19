@@ -2,7 +2,7 @@
 #-Calls Extract_peptides_DB
 #	Creates a dictionary of peptides within the search database (specified in "parmas_TPP")
 #Gives PTM positions on proteins for PSMs passing FDR threshold
-#output="PTM_confident.csv"
+ #output="PTM_confident.csv"
 
 
 import pandas as pd

@@ -1,7 +1,6 @@
 #Gives a spectrum by spectrum comparison of all search files specified in "params_TPP"
 #Creates a subfolder within "Spectrum_Comparisons" with the search names (specified within "params_TPP") separated by "_" (eg. pA_pG_pL_pD_pE_pP)
-#output="FDR_[cutoff]_PTM_score_0_spectrum_comparison_[searchnames].csv","All_confident_PTM_no_collapse_Site-based_spectrum_match.csv"
-#	Where each row represents each spectrum and gives the pepetide, protein, score, mods et. found in each search for that spectrum
+#output="FDR_[cutoff]_PTM_score_0_spectrum_comparison_[searchnames].csv" (where each row represents each spectrum and gives the peptide, protein, score, mods et. found in each search for that spectrum),"All_confident_PTM_no_collapse_Site-based_spectrum_match.csv" (binary spectrum match column, do search comparisons provide same spectra results)
 
 
 import os

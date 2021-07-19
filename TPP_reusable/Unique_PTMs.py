@@ -1,8 +1,8 @@
 #Gives collapsed outputs of unique hits
-#	a) collapse by mass shift - collapsing PSMs by peptide+mass shift, keeping the best scoting: "Peptide+confident_PTM_unique.csv"
-#	b) collaspe by peptide  - collapsing PSMs by peptide, keeping best scoring: "Peptide_confident_PTM_unique.csv"
-#	c) collapse by protein position - collapsing modification by position on protein, keeping best scoring: "Site_confiden_PTM_unique.csv"
-#Also gives no-collapsed in same format: "All_confident_no_collapse.csv"
+#	a) collapse by mass shift - collapsing PSMs by peptide+mass shift, keeping the best scoring: "Peptide_mass_confident_PTM_unique.csv"
+#	b) collapse by peptide  - collapsing PSMs by peptide, keeping best scoring: "Peptide_confident_PTM_unique.csv"
+#	c) collapse by protein position - collapsing modification by position on protein, keeping best scoring: "Site_confident_PTM_unique.csv"
+#Also gives none-collapsed in same format: "All_confident_no_collapse.csv
 
 
 import pandas as pd

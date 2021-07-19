@@ -41,7 +41,7 @@ TPP_reusable/Post_analysis
 	Output="All_confident_PTM_no_collapse_Site-based_spectrum_match_FLR.csv", can also be used for filtering for no-choice peptides ("All_confident_PTM_no_collapse_Site-based_spectrum_match_FLR_filtered.csv") or sorting by PTM score rather than combined probability ("All_confident_PTM_no_collapse_Site-based_spectrum_match_FLR_PTM_sort.csv") or collapsing by peptide+mod ("All_confident_PTM_no_collapse_Site-based_spectrum_match_new_FLR_collapse.csv") or collapsed by protein position ("Site_confident_PTM_unique_FLR.csv") 
 	These output files are then processed by "pAla" (see below) to provide the decoy amino acid FLR calculations
 	Final FLR calculations are then passed through either "plot_FLR_comparisons" or "plot_FLR_comparisons_PTM_prob" functions 
-	Output folder is generated "Comparisons/[software names, seperated by "_"]/" and multiple comparison plots, from each of the ordering/filtering options seen above, are generated here.
+	Output folder is generated "Comparisons/[software names, seperated by "_"]/" and multiple comparison plots, from each of the ordering/filtering options seen above, are generated here
 	
 TPP_reusable/pAla
     Calculates decoy amino acid FLR 

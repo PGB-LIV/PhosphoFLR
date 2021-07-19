@@ -1,4 +1,4 @@
-#Calculate FDR statistics and plots
+#Calculate false detection rate statistics and plots
 #-Calls Extract_DF
 #	Loads CSV file to dataframe for FDR calculations
 #Writes folder for downstream analysis eg. "FDR_0.01_PTM_score_0" FDR filter 0.01, no PTM score filter
