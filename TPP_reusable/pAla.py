@@ -1,5 +1,8 @@
-#function for calculation pAla
-#take any input, create pAla column
+#Calculates decoy amino acid FLR 
+#Takes input from "FLR files" generated from Post_analysis and calculates Decoy amino acid FLR. 
+#output=[input]_p[Decoy amino acid].csv
+
+
 import pandas as pd
 import re
 

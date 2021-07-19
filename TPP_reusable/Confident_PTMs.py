@@ -1,3 +1,10 @@
+#Filters for FDR cutoff specified in "params_TPP"
+#-Calls Extract_peptides_DB
+#	Creates a dictionary of peptides within the search database (specified in "parmas_TPP")
+#Gives PTM positions on proteins for PSMs passing FDR threshold
+#output="PTM_confident.csv"
+
+
 import pandas as pd
 import TPP_reusable.Extract_peptides_DB
 import re

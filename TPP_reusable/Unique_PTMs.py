@@ -1,3 +1,10 @@
+#Gives collapsed outputs of unique hits
+#	a) collapse by mass shift - collapsing PSMs by peptide+mass shift, keeping the best scoting: "Peptide+confident_PTM_unique.csv"
+#	b) collaspe by peptide  - collapsing PSMs by peptide, keeping best scoring: "Peptide_confident_PTM_unique.csv"
+#	c) collapse by protein position - collapsing modification by position on protein, keeping best scoring: "Site_confiden_PTM_unique.csv"
+#Also gives no-collapsed in same format: "All_confident_no_collapse.csv"
+
+
 import pandas as pd
 import re
 import numpy as np
@@ -169,30 +176,5 @@ def unique(output, peptide_based,site_based,mass_based,non_collapse):
     df4['All_Proteins']=df4['Protein']
     df4['All_USI']=df4['USI']
     df4.to_csv(non_collapse,index=False)
-
-    # Collapse by protein position - rank by no supporting PSMs
-    df5 = pd.DataFrame(
-        {"Peptide_mod": peptide_split[1:], "Peptide": peptide_unmod_split[1:], "Protein": protein_split[1:],
-         "Spectrum": spectrum_split[1:], "USI": USI_split[1:], "Source": source_split[1:], "Score": score_split[1:],
-         "PTM": PTMs_split[1:],
-         "PTM_score": PTM_score_split[1:], "PTM_positions": PTM_positions_split[1:],
-         "PTM_Protein_Position": PTM_protein_positions_split[1:], "PTM_info": PTM_info_split[1:],
-         "Mass shift": mass_shift_split[1:], "FDR": FDR_split[1:], "Qvalue": q_split[1:]})
-    df5['Pro-pos'] = df5['Protein'] + "-" + df5['PTM_Protein_Position']
-    df5['Combined_Score'] = pd.to_numeric(df5['Score'])*pd.to_numeric(df5['PTM_score'])
-    df5 = df5.loc[df5['Combined_Score']>=0.75]
-    df5 = df5.sort_values(['Combined_Score'], ascending=[True])
-    df5['Protein_count'] = df5.groupby(['Pro-pos'], sort=False).cumcount() + 1
-    df5 = df5.sort_values(['Protein_count', 'Combined_Score'], ascending=[False, False])
-    USI_list5 = []
-    for i in df5['USI'].groupby(df5['Pro-pos']).apply(';'.join):
-        USI_list5.append(i)
-    df5['Unique'] = np.where(df5['Protein_count'] == 1, "TRUE", "FALSE")
-    df5.to_csv(site_based.replace(".csv","test.csv"),index=False)
-    df5 = df5.drop_duplicates(subset=('Pro-pos'), keep='first', inplace=False)
-    df5['All_Proteins'] = df5['Protein']
-    df5['All_USI'] = USI_list5
-    df5.to_csv(site_based.replace(".csv","_new_collapse.csv"), index=False)
-    df2.to_csv(peptide_based, index=False)
 
 

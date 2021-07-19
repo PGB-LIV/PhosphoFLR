@@ -1,3 +1,7 @@
+#Convert ".ptm.pep.xml" TPP PTMprophet results output to .csv file for downstream analysis
+#output="interact.ptm.pep.csv"
+
+
 import xml.sax
 import pandas as pd
 import os
