@@ -27,17 +27,17 @@ TPP_reusable/Confident_PTMs
 TPP_reusable/Unique_PTMs
     Gives collapsed outputs of unique hits
         a) collapse by mass shift - collapsing PSMs by peptide+mass shift, keeping the best scoring: "Peptide_mass_confident_PTM_unique.csv"
-        b) collaspe by peptide  - collapsing PSMs by peptide, keeping best scoring: "Peptide_confident_PTM_unique.csv"
+        b) collapse by peptide  - collapsing PSMs by peptide, keeping best scoring: "Peptide_confident_PTM_unique.csv"
         c) collapse by protein position - collapsing modification by position on protein, keeping best scoring: "Site_confident_PTM_unique.csv"
     Also gives none-collapsed in same format: "All_confident_no_collapse.csv"
 	
 TPP_reusable/Comparison
     Gives a spectrum by spectrum comparison of all search files specified in "params_TPP"
     Creates a subfolder within "Spectrum_Comparisons" with the search names (specified within "params_TPP") separated by "_" (eg. pA_pG_pL_pD_pE_pP)
-    output="FDR_[cutoff]_PTM_score_0_spectrum_comparison_[searchnames].csv" (where each row represents each spectrum and gives the pepetide, protein, score, mods et. found in each search for that spectrum),"All_confident_PTM_no_collapse_Site-based_spectrum_match.csv" (binary spectrum match column, do search comparisons provide same spectra results)
+    output="FDR_[cutoff]_PTM_score_0_spectrum_comparison_[searchnames].csv" (where each row represents each spectrum and gives the peptide, protein, score, mods et. found in each search for that spectrum),"All_confident_PTM_no_collapse_Site-based_spectrum_match.csv" (binary spectrum match column, do search comparisons provide same spectra results)
 		
 TPP_reusable/Post_analysis
-    Expands PSMs to site-based format, where one row is one site on a peptide. Caluclates and generates figures for FLR calculations.
+    Expands PSMs to site-based format, where one row is one site on a peptide. Calculates and generates figures for FLR calculations.
 	Output="All_confident_PTM_no_collapse_Site-based_spectrum_match_FLR.csv", can also be used for filtering for no-choice peptides ("All_confident_PTM_no_collapse_Site-based_spectrum_match_FLR_filtered.csv") or sorting by PTM score rather than combined probability ("All_confident_PTM_no_collapse_Site-based_spectrum_match_FLR_PTM_sort.csv") or collapsing by peptide+mod ("All_confident_PTM_no_collapse_Site-based_spectrum_match_new_FLR_collapse.csv") or collapsed by protein position ("Site_confident_PTM_unique_FLR.csv") 
 	These output files are then processed by "pAla" (see below) to provide the decoy amino acid FLR calculations
 	Final FLR calculations are then passed through either "plot_FLR_comparisons" or "plot_FLR_comparisons_PTM_prob" functions 
