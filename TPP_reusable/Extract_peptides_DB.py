@@ -110,8 +110,8 @@ def extract_peptide_positions(input):
                     peptides2.append(peptide2)
                     position2 = (i[1])
                     positions2.append(position2)
-                    dict[protein][peptide2] = position2
-                    tryptic(protein,peptide2,position2)
+                    dict[protein][peptide2] = position2+1
+                    tryptic(protein,peptide2,position2+1)
                 count2 = 0
                 for i in peptides2:
                     pos4 = count2
@@ -122,38 +122,38 @@ def extract_peptide_positions(input):
                         missed5 = (peptides2[pos4] + peptides2[pos4 + 1] + peptides2[pos4 + 2])
                         missed4 = (peptides2[pos4] + peptides2[pos4 + 1])
                         pos_missed2 = (positions2[pos4])
-                        dict[protein][missed7] = pos_missed2
-                        tryptic(protein, missed7, pos_missed2)
-                        dict[protein][missed6] = pos_missed2
-                        tryptic(protein, missed6, pos_missed2)
-                        dict[protein][missed5] = pos_missed2
-                        tryptic(protein, missed5, pos_missed2)
-                        dict[protein][missed4] = pos_missed2
-                        tryptic(protein, missed4, pos_missed2)
+                        dict[protein][missed7] = pos_missed2+1
+                        tryptic(protein, missed7, pos_missed2+1)
+                        dict[protein][missed6] = pos_missed2+1
+                        tryptic(protein, missed6, pos_missed2+1)
+                        dict[protein][missed5] = pos_missed2+1
+                        tryptic(protein, missed5, pos_missed2+1)
+                        dict[protein][missed4] = pos_missed2+1
+                        tryptic(protein, missed4, pos_missed2+1)
                     if pos4 <= (len(peptides2) - 4):
                         missed6 = (peptides2[pos4] + peptides2[pos4 + 1] + peptides2[pos4 + 2] + peptides2[pos4 + 3])
                         missed5 = (peptides2[pos4] + peptides2[pos4 + 1] + peptides2[pos4 + 2])
                         missed4 = (peptides2[pos4] + peptides2[pos4 + 1])
                         pos_missed2 = (positions2[pos4])
-                        dict[protein][missed6] = pos_missed2
-                        tryptic(protein, missed6, pos_missed2)
-                        dict[protein][missed5] = pos_missed2
-                        tryptic(protein, missed5, pos_missed2)
-                        dict[protein][missed4] = pos_missed2
-                        tryptic(protein, missed4, pos_missed2)
+                        dict[protein][missed6] = pos_missed2+1
+                        tryptic(protein, missed6, pos_missed2+1)
+                        dict[protein][missed5] = pos_missed2+1
+                        tryptic(protein, missed5, pos_missed2+1)
+                        dict[protein][missed4] = pos_missed2+1
+                        tryptic(protein, missed4, pos_missed2+1)
                     if pos4 <= (len(peptides2) - 3):
                         missed5 = (peptides2[pos4] + peptides2[pos4 + 1] + peptides2[pos4 + 2])
                         missed4 = (peptides2[pos4] + peptides2[pos4 + 1])
                         pos_missed2 = (positions2[pos4])
-                        dict[protein][missed5] = pos_missed2
-                        tryptic(protein, missed5, pos_missed2)
-                        dict[protein][missed4] = pos_missed2
-                        tryptic(protein, missed4, pos_missed2)
+                        dict[protein][missed5] = pos_missed2+1
+                        tryptic(protein, missed5, pos_missed2+1)
+                        dict[protein][missed4] = pos_missed2+1
+                        tryptic(protein, missed4, pos_missed2+1)
                     if pos4 <= (len(peptides2) - 2):
                         missed4 = (peptides2[pos4] + peptides2[pos4 + 1])
                         pos_missed2 = (positions2[pos4])
-                        dict[protein][missed4] = pos_missed2
-                        tryptic(protein, missed4, pos_missed2)
+                        dict[protein][missed4] = pos_missed2+1
+                        tryptic(protein, missed4, pos_missed2+1)
     name=input.replace(".fasta", "_Peptides_DB.csv")
     with open(name, "w") as f:
         print("Protein Peptide Pos",file=f)
