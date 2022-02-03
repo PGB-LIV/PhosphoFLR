@@ -59,12 +59,12 @@ for wd, software in zip(w, s):
         decoy = "pAla"
     decoy_list.append(decoy)
     search_software = "TPP"
-    #FDR.calculateFDR(results_file, search_software, FDR_output, PXD, wd, search)
+    FDR.calculateFDR(results_file, search_software, FDR_output, PXD, wd, search)
     print("FDR calculation done")
     print("--- %s seconds ---" % (time.time() - start_time))
     # filter for FDR (and A-score) cutoff
     confident_PTM_output = sub + "/PTM_confident.csv"
-    #Confident_PTMs.confident(FDR_output, database, FDR_cutoff, PTM_score_cutoff, confident_PTM_output)
+    Confident_PTMs.confident(FDR_output, database, FDR_cutoff, PTM_score_cutoff, confident_PTM_output)
     print("Confident PTMs done")
     print("--- %s seconds ---" % (time.time() - start_time))
     # Collapse for best scoring for each peptide, protein site, mass shift on protein or no collapse
@@ -72,7 +72,7 @@ for wd, software in zip(w, s):
     unique_site = sub + "/Site_confident_PTM_unique.csv"
     unique_mass = sub + "/Peptide_mass_confident_PTM_unique.csv"
     non_collapse = sub + "/All_confident_PTM_no_collapse.csv"
-    #Unique_PTMs.unique(confident_PTM_output, unique_peptide, unique_site, unique_mass, non_collapse)
+    Unique_PTMs.unique(confident_PTM_output, unique_peptide, unique_site, unique_mass, non_collapse)
     print("Unique PTMs done")
     print(FDR_cutoff, software, "--- %s seconds ---" % (time.time() - start_time))
 
@@ -81,7 +81,7 @@ print("Spectrum Comparison --- %s seconds ---" % (time.time() - start_time))
 files = []
 for i in w:
     files.append(i + "/" + sub + "/PTM_confident.csv")
-#Comparison.comparison(p, sub, files, s)
+Comparison.comparison(p, sub, files, s)
 print("Spectrum Comparison Done --- %s seconds ---" % (time.time() - start_time))
 
 file_input_list = ["All_confident_PTM_no_collapse.csv"]
