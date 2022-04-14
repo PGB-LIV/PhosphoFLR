@@ -27,7 +27,7 @@ For the analysis of the Synthetic Peptide Dataset (PXD007058):
   
 For searching all other datasets, with TPP only:
 
-      $py TPP_comparison parmas_TPP	
+      $py TPP_comparison params_TPP	
     The params file (params_TPP) must be given and must contain the directories of each of the search file locations. 
 
 
